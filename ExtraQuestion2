@@ -1,0 +1,47 @@
+public class Program{
+    public static void main(){
+        Labs first = new Labs("Sport","Push up 10 times", 2);
+        first.display();
+        RGZ second = new RGZ("Gaming","Kick the keyboard", 6);
+        second.display();
+    }
+}
+class Labs extends Question{
+    private int numOfLab;
+    public Labs(String subject, String quest, int number){
+        super(subject,quest);
+        this.numOfLab = number;
+    }
+    public void display(){
+        System.out.printf("Subject is: %s\t Question is: %s\t Number of Lab: %d\n",super.getName(),super.getQuest(),numOfLab);
+    }
+}
+class RGZ extends Question{
+    private int NumOfRGZ;
+    public RGZ(String subject, String quest, int numb){
+        super(subject,quest);
+        this.NumOfRGZ = numb;
+    }
+    public void display(){
+        System.out.printf("Subject is: %s\t Question is: %s\t Number of RGZ: %d",super.getName(), super.getQuest(), NumOfRGZ);
+    }
+}
+abstract class Question extends subject{
+    private String quest;
+    public String getQuest(){return quest;}
+    public Question(String subject,String quest){
+        super(subject);
+        this.quest = quest;
+    }
+    public abstract void display();
+}
+class subject{
+    private String nameOfSubject;
+    public String getName(){ return nameOfSubject;}
+    public subject(String nameOfSubject){
+        this.nameOfSubject=nameOfSubject;
+    }
+    public void display(){
+        System.out.printf("Name: %s", nameOfSubject);
+    }
+}
